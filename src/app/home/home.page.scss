@@ -54,6 +54,10 @@ ion-card {
   transition: 400ms all ease-in-out;
 }
 
+html, body, .ion-app, .ion-content {
+  background-color: transparent;
+} 
+
 // ion-card {
 //   img {
 //     width: 90px;

@@ -17,23 +17,22 @@ export class HomePage {
     spaceBetween: 1,
   };
 
-  cameraPreview: CameraPreview;
 
   cameraPreviewOpts: CameraPreviewOptions = {
     x: 0,
     y: 0,
     width: window.screen.width,
     height: window.screen.height,
-    camera: 'rear',
-    toBack: false,
+    camera: 'rear', // 후방 카메라
+    toBack: true,
     tapPhoto: true,
-    tapFocus: false,
+    tapFocus: true,
     previewDrag: false,
     storeToFile: false,
-    disableExifHeaderStripping: false
+    disableExifHeaderStripping: false,
   };
 
-  constructor() {}
+  constructor(private cameraPreview: CameraPreview) {}
 
   openCamera() {
     this.cameraPreview.startCamera(this.cameraPreviewOpts).then(
@@ -43,7 +42,6 @@ export class HomePage {
       (err) => {
         console.log(err);
       });
-
     this.cameraActive = true;
   }
 
